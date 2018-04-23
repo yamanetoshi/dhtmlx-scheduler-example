@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { EventService } from './event.service';
 
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { InMemoryDataService }  from './in-memory-data.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,8 @@ import { EventService } from './event.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+//    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [EventService],
   bootstrap: [AppComponent]
