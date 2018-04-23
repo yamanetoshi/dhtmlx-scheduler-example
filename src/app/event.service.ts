@@ -20,21 +20,25 @@ export class EventService {
     }
     
     insert(event: Event): Promise<Event> {
-        return this.http.post(this.eventUrl, JSON.stringify(event))
+//        return this.http.post(this.eventUrl, JSON.stringify(event))
+        return this.http.post(this.eventUrl, event)
             .toPromise()
             .then(ExtractData)
             .catch(HandleError);
     }
 
     update(event: Event): Promise<void> {
-        return this.http.put('${this.eventUrl}/${event.id}', JSON.stringify(event))
+        var urlStr = this.eventUrl + "/" + event.id;
+        return this.http.put(urlStr, event)
             .toPromise()
             .then(ExtractData)
             .catch(HandleError);
     }
     
     remove(id: number): Promise<void> {
-        return this.http.delete('${this.eventUrl}/${id}')
+        var urlStr = this.eventUrl + "/" + id
+//        return this.http.delete('${this.eventUrl}/${id}')
+        return this.http.delete(urlStr)
             .toPromise()
             .then(ExtractData)
             .catch(HandleError);
