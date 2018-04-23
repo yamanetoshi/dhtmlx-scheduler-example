@@ -6,6 +6,7 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { EventService } from './event.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
